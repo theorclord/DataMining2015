@@ -1,0 +1,150 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[vmargin=3.5cm, top=2cm]{geometry}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[section]{placeins}
+\hypersetup{
+   colorlinks,
+   citecolor=black,
+   filecolor=black,
+   linkcolor=black,
+   urlcolor=black
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering \parindent=0pt
+\newcommand{\HRule}{\rule{\textwidth}{1mm}}
+\vspace*{\stretch{1}} \HRule\\[1cm]\Huge\bfseries
+Game Development Report\\[0.7cm]
+\HRule\\[4cm]  
+\large by 
+\\ Mikkel Stolborg
+\vspace*{\stretch{2}} \normalsize %
+\begin{flushleft}
+IT University of Copenhagen \\
+Game Development, S2015\\
+Henrike Lode\\
+Lau Korsgaard\\
+\today \end{flushleft}
+\end{titlepage}
+
+\tableofcontents
+\pagebreak
+\section{Fall of Criton - Turn-based strategy game}
+I wanted to make a game based on a figurine based strategy board game called Battlefleet Gothic\cite{batgotwiki}. I wanted to give the players the ability to command a fleet of beautiful space ships in harrowing battles in the vastness of space. The idea was to use some of the simple game elements from the board game, combined with an art style similar to EVE online\cite{eveonline}, and many gameplay elements from XCOM: Enemy Unkown\cite{xcom}. 
+The idea was to present an easy way to experience the grand combat proposed by the Battlefleet Gothic game, with the pace and ease of XCOM.
+
+I hoped to create a hotseat game showing of the different ships, the combat, and the environments of the game. The hotseat was chosen both to incorporate a multiplayer experience and to have the freest form of fleet selection. 
+
+Throughout the development of the game, there were many new ideas and cool additions which could be implemented in further versions, however, it became clear that in order to produce a game, we had to ensure a limited scope. 
+\section{Problem statement} % (100 words)
+My original problem statement were as follows:\\
+\textit{"I want to facilitate an iterative environment of game development with the focus of having working prototypes after an iteration"}\\
+While not a very precise statement, what I was going for were the idea that I could use an iterative development process loosely based on scrum to ensure a work structure were everyone knew what to make and had a clear idea of what to deliver each week. 
+As the project manager I would commit a great deal of my time to ensure that the overhead of doing the scrum-like process would be reduced to a minimum. 
+The actual problem and thought behind it were, however, not a great focus as the project processed, as I will detail later.
+
+\section{Development process and methodology} % (800 words)
+The project were originally thought to be using a scrum-like development process mixed with scope narrowing iterative game design. The idea were to have a phase were we would finalize the game idea and design the main concepts of the game, whilst trying to create a simple prototype to work on. Afterwards we would transition into a scrum regime where we would iterate over the prototype until a suitable game were produced. This would ideally be when the alpha deadline would come around. Then we would enter the polishing phase were we should go towards making a workable beta slice. 
+This was the ideal structure which we were working towards, however there were several setbacks as will be explained in section \ref{probref}.
+
+Better management of time and better communication might have changed the outcome for the development method, but in the end the scrum-like method might not have been the correct approach for developing games at the level we were at. The time management aspect and the quick changes in the game design and goal, might not be structured for the methodology presented in the srum-like model. A more loosely and open structure for the initial phase of the development might be more appropriate. The entire process of the project is more chaotic than a game in the beta state might be. A correct simile might be between the start up of a project in relation to what has been the structure and progress made in this game development project.
+\section{Team dynamics and experiences} %(600 words)
+The team originally consisted of five people. There were 3 programmers, one whom had taken the role of 3D artist, and two designers. 
+I was to take on the role of the project manager for the team, whilst being the creative director, as the idea behind the game were primarily mine. This assignment were made due to the fact no other wanted the role of project manager and I had the basis of the idea and the direction we wanted to take the game. 
+Furthermore when looking at the game at the beginning, I was supposed to help out with the programming of the basic gameplay, whilst leaving the main programming work load to our main programmer. 
+I was also set to be in charge of any PR to facilitate the vision of the game. 
+
+These roles which we had laid out did however not hold up during the project. Both due one member of the team departing during the development, and due to time constraints and miss estimation of workload.
+
+The team itself were in the beginning quite split into the different areas of expertise. This meant that the communication in the beginning of the project was not optimal. This led to delays and the development of faulty or incorrect game prototypes.
+
+During the project we lost one of our team members, the then lead game designer, which made complications regarding the roles we had assigned. The final structure of roles became more fluid as work load had to be distributed on the remaining members. 
+
+The remaining members of the group managed greatly to lift the workload needed. But even so it was clear, if not from the beginning, that our team would have benefited greatly from a dedicated artist in relation both to UI and models in game. 
+
+I also believe we could have improved our work and motivation by having more teambuilding events, such as going for a beer or playing some games together. Whilst we did manage to have a short board game night, we never really had an all free night were we could discuss all and anything. 
+\section{Problem reflections} %(1500 words)
+\label{probref}
+In this section I will try to go over the complications of our project and how the might have been averted or what could have been considered to avoid some of our difficulties.
+At the beginning of the project, I had announced I would be going on a vacation from the second week and 3 weeks forward from there. I was set on creating a plan which the team could follow in my absence and we appointed a deputy project manager.
+A simplistic plan were formulated for what should be in place upon my return, such that we could make up for lost time quickly. 
+\subsection{Project development and difficulties}
+The plan did not hold which I think was due to lack of communication and motivation whilst I was away. The lead programmer had done much whilst I was away, but the game system which he were to implement the code on, were not done to satisfaction, with many loose ends.
+In hindsight, leaving a project to unfold on its own, whilst both being the one to direct the feel of the game and managing the work flow, was a bad idea. The group did not have a strong enough foothold and to many things were left uncertain and no direction were given. 
+I also suspect that because the deputy had thoughts of leaving ITU, that it might have had reduced his motivation to work on the game. His decision to leave the group came about two weeks after I arrived home from my trip, and at the time of his departure, the game were still not designed in any great degree.
+
+On return I attempted to steer the project back to an iterative development environment, and I attempted to launch a scrum-like backlog with task for each of the branches of the development team. There were many complications to attempting to kick starting this process, as I did not have a good enough overview of all the things which needed doing and what had already been done.
+
+Having the alpha deadline close on us, many of the task were distributed on a meeting by meeting basis with no regards to updating a backlog or sprint backlog.
+
+After a week of working, we lost a group member as he felt himself not able to motivate him for studying at ITU. This loss meant we had to reconsider our position and we still had way to little to show for our work.
+
+Following the complications in the start of the project, the other designer, Maxime, and I sat down and used an entire day to formulate the basic combat system which we are using today. Having cleared this obstacle we were able to get an overview of the project and see where we had to go, in order to present a playable alpha.
+
+We needed to fix many things to get the alpha to work, and due to time constraints, many of the solutions were hotfixes to hotfixes. This meant at the end of the alpha we had to refactor much of our code, such that we did not create a great mess of small tweaks and unscalable code. 
+This meant spending time to recreate what we had in the alpha for the beta in a manor which would mean that the project would  not collapse at the slightest error. 
+Much of this refactoring could have been avoided if the communication about the game layout had been clearer at the beginning. Much of it could perhaps also be traced to the fact that the main programmer had no feedback on his code until it was to late. Having some pair programming in the beginning or some feedback on the code during its first iterations might have ensured the code to be less tangled and with a clearer vision.
+
+Throughout this process I became more and more focussed on coding the project, which meant I lost the overview and capability as a project manager. In the end I only barely were able to figure out what needed to be done in the project.
+
+At this moment I undertook the role of the main UI programmer, but I shifted between secondary designer, creative director, project manager, whilst I commented and helped working with the code structure.
+
+In the end we were successful in creating a game for the beta slice due to the massive work put into the project by the team nearing the deadline. Each of the roles assigned for the team had become more or less fluid in order to get work done were needed.
+
+As a side note, we were able to outsource some of our art to an external 2D artist. Even after just a week, the artwork which we had received gave us a more common understanding of how the game should feel and look. We unfortunately did not get to use much of the skills available, as when we finally had the artwork we needed, the project were in a phase were fixing the programming and polishing were more important than adding more features. The artwork we ended up using as a background for our main menu set the mood for the game and it can be seen in figure \ref{ArtShip}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.1]{ShipArt}
+	\caption{Artwork of a ship from Fall of Criton. Courtesy of Nanna Steffensen.}
+	\label{ArtShip}
+\end{figure}
+\subsection{Experiences and solutions}
+This project has taught me quite a great deal about leading and participating in the development of a game. There is many of the experiences just described, which I now believe could have been avoided, and I hope to think I have acquired some of the skills necessary to handle these situations.
+I see now the role of the project manager more clearly, and I can see why one must set aside time in order to fulfil the responsibility given to this role. 
+A simple observation perhaps, yet strongly nested, were that the group cannot run without either guidance from the creative director or the project manager at the same time, unless a strong foundation for the project already exits.  
+The value of strong communication between all members of the project, cannot be understated. Once we were able to get the project back on track, we were able to meet up and fix things on the fly, as we could simply explain the errors and flaws in the current design. 
+The solution to many of our problem lie in poor planning and lack of communication. If we had fixed this, we might have had a stronger team and thereby a stronger game. 
+
+I do also believe that our team could have benefited greatly from a person which had skills with drawing art and creating 3D models. Having a common artistic direction and idea of 3D models, is much easier when you have visual aids to create a common ground. 
+
+In the end I was unable to even get near my desired goal for having the project run on a tight schedule with milestones and deliverables. The effort needed to run a project this way could have been reduced if it was planned correctly from the start, however I also believe that some of the things dictated in strict development models, might not be compatible with an indie game development process. I believe I have a greater tool set for when I next time decide to run a project of this type in hopes of creating a game. 
+What more is what I have learned in regards to ensuring you stay within scope and create what you need at the time you need it. Having to take the choice about what you can remove from your scope and still make a game, is a rather difficult one, as you always want the game to have all the features you dreamt of. This part is definitely where I can see the roles of the project manager and the creative director clash. One of them should be more worried about have a shippable game whilst the other needs to preserve the feel and flow of the game. In the end of the project, I felt the weight of having to switch between the two roles and making it work. 
+
+\section{Conclusion}
+The final game which we were able to present at the beta play date, were more than i had expected two weeks prior. I was a mazed of how far we had come and how well the game were received. The game were probably not as polished as many of the other counterparts, but in the end I was were satisfied with the product we delivered. 
+
+I think we were able to deliver a fast paced and fun strategy game, which showcased a lot of the features we had in mind. From where we stand as a group I could definitely see a future for the game, probably as a small game, but hopefully unique enough to warrant some attention. 
+\appendix
+\begin{thebibliography}{9}
+
+\bibitem{batgotwiki}
+  \emph{Battlefleet Gothic},
+  http://en.wikipedia.org/wiki/Battlefleet\_Gothic,
+  12-05-15
+  
+\bibitem{eveonline}
+  \emph{EVE online},
+  https://www.eveonline.com/,
+  12-05-15
+
+\bibitem{xcom}
+  \emph{XCOM Enemy Unkown},
+  http://www.xcom.com/enemyunknown/entry,
+  12-05-15 
+\end{thebibliography}
+
+\end{document}
+
+
