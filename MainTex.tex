@@ -161,7 +161,7 @@ The total process in the orange framework can be seen in figure \ref{preprocessM
 \subsection{Classification tree}
 The classification tree\cite{ClassificationTree} is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
 The tree is created upon the information gain, it will be built from top to bottom and the tree will keep being built until all the the samples of a given tree node belong to the same class, no remaining attributes to split upon or no samples are left. In figure \ref{classTreeMap}, we see the structure of the orange map where we create the classification tree. 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.5]{ClassificationTreeOrange}
 \end{center}
@@ -213,31 +213,31 @@ How ever while looking over the clusters we could see interesting facts about th
 \begin{figure}[h]
 	\centering
 	\begin{center}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/Sex}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/PClass}\\
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster1/Sex}
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster1/PClass}\\
 		\vspace{1 mm}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/Embarked}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/Fare}
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster1/Embarked}
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster1/Fare}
 	\end{center}
 	\caption{Cluster 1}
 	\label{ClusterOne}
 \end{figure}
 
+For example we saw that in cluster 1, see figure \ref{ClusterOne}, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
+
 \begin{figure}[h]
 	\centering
 	\begin{center}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Sex}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/PClass}\\
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster3/Sex}
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster3/PClass}\\
 		\vspace{1 mm}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Embarked}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Fare}
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster3/Embarked}
+		\includegraphics[scale=0.25]{ClusterDistribution/Cluster3/Fare}
 	\end{center}
 	\caption{Cluster 3}
 	\label{ClusterThree}
 \end{figure}
 
-
-For example we saw that in cluster 1, see figure \ref{ClusterOne}, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
 
 How ever if we look at Cluster 3, see figure \ref{ClusterThree}, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
 
