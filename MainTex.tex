@@ -150,27 +150,21 @@ Decided to use classification tree to try to accurately predict the survival of 
 \subsubsection{Cross Validation}
 10 fold Cross validation
 \subsection{K-means Clustering}
-K-Means
+
+K-Means clustering works by first defining K number of  clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
+\subsubsection{Implementation}
 We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
 
-We started by normalizing the numerical values, 
-We wanted to use that to increase the accuracy of the Classification tree
+How ever after reclassifying with the clusters as an extra attribute we saw that it did not increase accuracy as expected. After looking into the clustered data we saw that the clustering and the classification focused on the same attributes so that did not help us in increasing accuracy.
 
-Numerical data was normalized before clustering
+How ever while looking over the clusters we could see interesting facts about the clusters and were able to find connections regarding clusters.
 
-Did not have the desired effect due to data being clustered around the same points as the classification tree
+For example we saw that in cluster 1, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
 
-Instead we saw interesting facts about the clustering.
+How ever if we look at Cluster 3, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
 
-There are 3 clusters total, 2 for males, 1 for females.
-
-cluster 1 is all males, mostly from lower class and most of the embarked from Southampton(S) and they mostly died.
-
-Cluster 2 is all female, no specific class, most of them embarked from Southampton(S) but most of them lived.
-
-Cluster 3 is mostly male, mostly upper class, most of them embarked from Cherbourg and majority survived.
-
-From this we can see that there not many upper class people living in Southampton and not a lot of people embarked from Queenstown(Q). Surviving as a male on the titanic meant that you had a much better chance if you were upper class and boarded from Cherbourg.
+What we can extract from this data is, that if you were upper class you would most likely be living in Cherbough.
+We can also see that people living in Cherbourg and Queenstown(Q) generally had more money than people living in Southampton. If we look at the fare graph difference between Cluster 1 and 3 we can see a big difference, people living in Southampton would generally pay less than 20 dollars for the ticket and almost no one paid more than that. How ever in Cluster 3 we can see that people still mostly paid under 20 dollars however we can also see that there are a lot more people willing to pay more than the 20 dollars.
 
 \begin{table}[h]
 \begin{tabular}{|l|l|l|l|l|l|l|}
