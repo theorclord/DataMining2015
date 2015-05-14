@@ -127,36 +127,94 @@ In the tool you manipulate the data by clicking and drawing connections between 
 \section{Data mining}
 \subsection{Preprocessing}
 \subsection{Classification tree}
+Decided to use classification tree to try to accurately predict the survival of passengers from common known values such as, sex, age, number of siblings/spouses on board, number of parents/children on board, how much they paid for their ticket and where they embarked from.
 \subsubsection{Cross Validation}
+10 fold Cross validation
 \subsection{K-means Clustering}
+K-Means
+We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
+
+We started by normalizing the numerical values, 
+We wanted to use that to increase the accuracy of the Classification tree
+
+Numerical data was normalized before clustering
+
+Did not have the desired effect due to data being clustered around the same points as the classification tree
+
+Instead we saw interesting facts about the clustering.
+
+There are 3 clusters total, 2 for males, 1 for females.
+
+cluster 1 is all males, mostly from lower class and most of the embarked from Southampton(S) and they mostly died.
+
+Cluster 2 is all female, no specific class, most of them embarked from Southampton(S) but most of them lived.
+
+Cluster 3 is mostly male, mostly upper class, most of them embarked from Cherbourg and majority survived.
+
+From this we can see that there not many upper class people living in Southampton and not a lot of people embarked from Queenstown(Q). Surviving as a male on the titanic meant that you had a much better chance if you were upper class and boarded from Cherbourg.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+Sex & Embarked & Class & Age & Sibling/Spouse & Parent/Children & Fare\\
+\hline
+Male & S & 2.428 & 30.28 & 0 & 0 & 21.5697\\
+Female & S & 2.258 & 26.32 & 1 & 1 & 35.2690\\
+Male & C & 1.552 & 34.14 & 0 & 0 & 66.8577\\
+\hline
+\end{tabular}
+\caption{Cluster Centroids after clustering.}
+\label{clusterCentroids}
+\end{table}
+
 \begin{figure}[h]
 	\centering
-	\begin{flushleft}
+	\begin{center}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/Sex}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/PClass}\\
+		\vspace{1 mm}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/Embarked}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster1/Fare}
-	\end{flushleft}
+	\end{center}
 	\caption{Cluster 1}
 	\label{ClusterOne}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	\begin{flushleft}
+	\begin{center}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Sex}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/PClass}\\
+		\vspace{1 mm}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Embarked}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Fare}
-	\end{flushleft}
+	\end{center}
 	\caption{Cluster 2}
 	\label{ClusterTwo}
 \end{figure}
 
+\begin{figure}[h]
+	\centering
+	\begin{center}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Sex}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/PClass}\\
+		\vspace{1 mm}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Embarked}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Fare}
+	\end{center}
+	\caption{Cluster 3}
+	\label{ClusterThree}
+\end{figure}
+
+
 \subsubsection{Data validation}
+10 fold cross validation
 
 \section{Conclusion}
 \subsection{Societal impact}
+Time travellers could use this information to go on the titanic to have the adventure of a lifetime trying to use statistics to survive.
+
+The classification tree could be used to predict the survival of people whose whereabouts were unknown.
 
 
 
