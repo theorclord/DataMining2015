@@ -35,6 +35,7 @@
 		<node id="31" name="Distributions" position="(1009.0, 718.0)" project_name="Orange" qualified_name="Orange.OrangeWidgets.Visualize.OWDistributions.OWDistributions" title="Cluster 1 Distribution" version="" />
 		<node id="32" name="Distributions" position="(999.0, 817.0)" project_name="Orange" qualified_name="Orange.OrangeWidgets.Visualize.OWDistributions.OWDistributions" title="Cluster 2 Distribution" version="" />
 		<node id="33" name="Distributions" position="(1002.0, 912.0)" project_name="Orange" qualified_name="Orange.OrangeWidgets.Visualize.OWDistributions.OWDistributions" title="Cluster 3 Distribution" version="" />
+		<node id="34" name="Data Table" position="(782.0, 618.0)" project_name="Orange" qualified_name="Orange.OrangeWidgets.Data.OWDataTable.OWDataTable" title="ClusterCentroids" version="" />
 	</nodes>
 	<links>
 		<link enabled="true" id="0" sink_channel="Data" sink_node_id="3" source_channel="Data" source_node_id="1" />
@@ -75,6 +76,7 @@
 		<link enabled="true" id="35" sink_channel="Data B" sink_node_id="17" source_channel="Merged Data A+B" source_node_id="5" />
 		<link enabled="true" id="36" sink_channel="Data" sink_node_id="7" source_channel="Merged Data A+B" source_node_id="5" />
 		<link enabled="true" id="37" sink_channel="Data" sink_node_id="9" source_channel="Merged Data A+B" source_node_id="5" />
+		<link enabled="true" id="38" sink_channel="Data" sink_node_id="34" source_channel="Centroids" source_node_id="16" />
 	</links>
 	<annotations />
 	<thumbnail />
@@ -90061,7 +90063,7 @@ p10
 I1
 sS'savedWidgetGeometry'
 p11
-S'\x01\xd9\xd0\xcb\x00\x01\x00\x00\x00\x00\x02+\x00\x00\x00\xc0\x00\x00\x05U\x00\x00\x038\x00\x00\x024\x00\x00\x00\xe6\x00\x00\x05L\x00\x00\x03/\x00\x00\x00\x00\x00\x00'
+S"\x01\xd9\xd0\xcb\x00\x01\x00\x00\x00\x00\x02+\x00\x00\x00\xc0\x00\x00\x05S\x00\x00\x03/\x00\x00\x023\x00\x00\x00\xde\x00\x00\x05K\x00\x00\x03'\x00\x00\x00\x00\x00\x00"
 p12
 sS'showMainTitle'
 p13
@@ -90071,7 +90073,7 @@ p14
 I0
 sS'widgetShown'
 p15
-I1
+I0
 sS'lineWidth'
 p16
 I1
@@ -90090,13 +90092,13 @@ p23
 (dp24
 S'attribute'
 p25
-(S'Sex'
+(S'Fare'
 p26
 cOrange.orange
 __pickleLoaderNamedConstants
 p27
 (S'Variable_Type'
-(I1
+(I2
 ttRp28
 tp29
 sS'yaxisTitle'
@@ -90140,37 +90142,37 @@ p45
 (dp46
 S'Fare'
 p47
-g27
-(S'Variable_Type'
-(I2
-ttRp48
+g28
 sS'Embarked'
-p49
+p48
 g27
 (S'Variable_Type'
 (I1
-ttRp50
+ttRp49
 sS'Age'
-p51
+p50
 g27
 (S'Variable_Type'
 (I2
-ttRp52
+ttRp51
 sS'Parch'
-p53
+p52
 g27
 (S'Variable_Type'
 (I2
-ttRp54
+ttRp53
 sS'Pclass'
-p55
+p54
 g27
 (S'Variable_Type'
 (I2
-ttRp56
+ttRp55
 sS'Sex'
-p57
-g28
+p56
+g27
+(S'Variable_Type'
+(I1
+ttRp57
 sS'Cluster'
 p58
 g27
@@ -93052,7 +93054,7 @@ p10
 I1
 sS'savedWidgetGeometry'
 p11
-S'\x01\xd9\xd0\xcb\x00\x01\x00\x00\x00\x00\x02+\x00\x00\x00\xc0\x00\x00\x05U\x00\x00\x038\x00\x00\x024\x00\x00\x00\xe6\x00\x00\x05L\x00\x00\x03/\x00\x00\x00\x00\x00\x00'
+S"\x01\xd9\xd0\xcb\x00\x01\x00\x00\x00\x00\x02+\x00\x00\x00\xc0\x00\x00\x05S\x00\x00\x03/\x00\x00\x023\x00\x00\x00\xde\x00\x00\x05K\x00\x00\x03'\x00\x00\x00\x00\x00\x00"
 p12
 sS'showMainTitle'
 p13
@@ -96021,5 +96023,6 @@ sS'numberOfBars'
 p1056
 I5
 s.</properties>
+		<properties format="literal" node_id="34">{'autoCommit': False, 'showMeta': 1, 'selectRows': True, 'distColorRgb': (220, 220, 220, 255), 'showAttributeLabels': 1, '__settingsDataVersion': None, 'showDistributions': 1, 'widgetShown': 0, 'savedWidgetGeometry': '\x01\xd9\xd0\xcb\x00\x01\x00\x00\x00\x00\x02&amp;\x00\x00\x00\xaf\x00\x00\x07\x17\x00\x00\x02\xe9\x00\x00\x02.\x00\x00\x00\xcd\x00\x00\x07\x0f\x00\x00\x02\xe1\x00\x00\x00\x00\x00\x00', 'selectedSchemaIndex': 0, 'colorByClass': True}</properties>
 	</node_properties>
 </scheme>
