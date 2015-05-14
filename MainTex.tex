@@ -149,7 +149,7 @@ From the figure it is clear that the outliers of the 3 people who paid more than
 
 The total process in the orange framework can be seen in figure \ref{preprocessMap}. The discretize function is there to tell the orange frame work that the survival data is indeed discrete data. The meta data in this case is the passenger id, which is used for merging throughout the framework. Finally the discrete values of the survival variable is being renamed to "yes" and "no". The data is merged and sent out for further use.
 
-\begin{figure}
+\begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=0.7]{PreprocessMap}
 	\end{center}
@@ -168,13 +168,27 @@ The tree is created upon the information gain, it will be built from top to bott
 \label{classTreeMap}
 \end{figure}
 
-\subsubsection{Implementation}
-With the classificat 
-\subsubsection{Cross Validation}
-10 fold Cross validation
+\subsubsection{Implementation and analysis}
+Our classification tree is built using the standard gain value and splits in regard to whether a passenger survived. This means the information gain is based on whether we learn more about who died after the split. The resulting tree, taken to five nodes depth, is visible in figure \ref{classificationTree}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{ClassificationTree}
+\end{center}
+\caption{Classification tree on Titanic data set.}
+\label{classificationTree}
+\end{figure}
+
+From the figure there quickly arise an interesting distinction, namely that the females have a much greater chance of survival, compared to the males. Even at the first split into genders, the females have an astonishing survival rate of 75.2 percent. From there after a simple split in class, you see the females who are both middle or upper class, have a 94.2 percent chance of survival. From there it splits on the fare they paid, where the ones who paid the most dies the most. This can be explained in the fact that many of the upper class high paying females already have been sorted out. With this in mind, the fact that there is a difference i payment, though signification in survival rate, tells us little about why it is important. Next split is, for both sub-splits, where the younger age prevails in both cases. From there the splits yield very little information and have been excluded from this report.
+
+Looking at the male side of the tree, just by being male, you have 79.8 percent risk of dying. The first split in city of embarkation, if you were one of the 16 people from Queenstown, your chances of survival is only 6.2 percent. The passengers from the other cities fare a little better, but in order to have a decent chance of survival, you will need to be of age less than or equal to 13, and have less than 2.5 siblings or spouses.
+
+All in all this tells us if you wanted to survive on the titanic, your best choice would be to be an upper or middle class female. Failing that you should have been one of the lower class females which were younger than 16.5 years. This means, that for surviving the titanic as a female, your greatest chance occurs when you are young, when not in the upper class. 
+
+For males the greatest chance of survival occurs when you are less than or equal to 13 years of age, whilst having fever than 2.5 siblings, and have not embarked at Queenstown.
 \subsection{K-means Clustering}
 K-Means clustering\cite{KMeans} works by first defining K number of clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
-\subsubsection{Implementation}
+\subsubsection{Implementation and analysis}
 We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
 
 How ever after reclassifying with the clusters as an extra attribute we saw that it did not increase accuracy as expected. After looking into the clustered data we saw that the clustering and the classification focused on the same attributes so that did not help us in increasing accuracy.
