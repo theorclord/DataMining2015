@@ -39,14 +39,22 @@ Hajira Jabeen\\
 Héctor Pérez Martínez\\
 Sebastian Risi\\
 Noor Shaker\\
-\today \end{flushleft}
+\today 
+\end{flushleft}
 \end{titlepage}
 
 \tableofcontents
 \pagebreak
-\section{Introduction}
+%\section{Introduction}
+%This report deals with data mining on data gathered about the passengers on the titanic. The primary idea is to figure out if there is any relation between the variables as to who survived. We primarily 
 
-\subsection{Data selection}
+%First we will discuss the data selection, the research question of this report, and go over the tools used.
+
+%We will then go through the data mining process, the methods used and analyse the outcome.  It is also in this section we will go through the preprocessing.
+
+%Finally we will conclude upon the project and see if there is any societal impact from our data analysis.
+%\clearpage
+\section{Data selection}
 We have worked on a data set regarding the passengers on the titanic. The data structure is presented in table \ref{titanData} with a short name and the value type associated with the variable.
 \begin{table}[h]
 \begin{tabular}{|l|l|l|}
@@ -72,7 +80,7 @@ embarked & Port of Embarkation & attribute table\\
 
 The type binary and binary string, means there is only two options, the first of the types is based on numeric binary data, whilst the second is based on string data. The value type attribute table covers three options. The type designation in the table are based on how they are treated in the data mining code. This means that whilst some of the other variables might be a three option choice, it will not be treated as such. The reason for this division is mostly due to the nature of string variables and numeric variables.
 
-\subsubsection{Data description}
+\subsection{Data description}
 The variables in the table are specified as follows. 
 
 Survival is simply a 1 for survived and 0 for not. 
@@ -143,7 +151,17 @@ A small reduction in data were made to remove outliers in respect to fare, simpl
 \label{farepreprocess}
 \end{figure}
 
-From the figure it is clear that the outliers of the 3 people who paid more than 400. 
+From the figure it is clear that the outliers of the 3 people who paid more than 400. Removing the outliers gives a more detailed view of the inter relations of the other values.
+
+The total process in the orange framework can be seen in figure \ref{preprocessMap}. The discretize function is there to tell the orange frame work that the survival data is indeed discrete data. The meta data in this case is the passenger id, which is used for merging throughout the framework. Finally the discrete values of the survival variable is being renamed to "yes" and "no". The data is merged and sent out for further use.
+
+\begin{figure}
+	\begin{center}
+	\includegraphics[scale=0.7]{PreprocessMap}
+	\end{center}
+	\caption{Orange map of preprocessing. The data is prepared for the algorithms and unnecessary data is removed.}
+	\label{preprocessMap}
+\end{figure}
 
 \subsection{Classification tree}
 Decided to use classification tree to try to accurately predict the survival of passengers from common known values such as, sex, age, number of siblings/spouses on board, number of parents/children on board, how much they paid for their ticket and where they embarked from.
@@ -222,7 +240,7 @@ Male & C & 1.552 & 34.14 & 0 & 0 & 66.8577\\
 
 \subsubsection{Data validation}
 10 fold cross validation
-
+\clearpage
 \section{Conclusion}
 \subsection{Societal impact}
 Time travellers could use this information to go on the titanic to have the adventure of a lifetime trying to use statistics to survive.
