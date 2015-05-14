@@ -46,7 +46,65 @@ Noor Shaker\\
 \pagebreak
 \section{Introduction}
 \subsection{Data selection}
+We have worked on a data set regarding the passengers on the titanic. The data structure is presented in table \ref{titanData} with a short name and the value type associated with the variable.
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+Variable name & Short name & Value Type\\
+\hline
+survival & Survived & binary\\
+pclass & Passenger Class & numeric\\
+name & Name & string\\
+sex & Sex & binary string\\
+age & Age & numeric\\
+sibsp & Number of Siblings/Spouses Aboard & numeric\\
+parch & Number of Parents/Children Aboard & numeric\\
+ticket & Ticket Number & string\\
+fare & Passenger Fare & numeric\\
+cabin & Cabin & string\\
+embarked & Port of Embarkation & attribute table\\
+\hline
+\end{tabular}
+\caption{Titanic data set variables with short description and classification}
+\label{titanData}
+\end{table}
+VARIABLE DESCRIPTIONS:
+survival        Survival
+                (0 = No; 1 = Yes)
+pclass          Passenger Class
+                (1 = 1st; 2 = 2nd; 3 = 3rd)
+name            Name
+sex             Sex
+age             Age
+sibsp           Number of Siblings/Spouses Aboard
+parch           Number of Parents/Children Aboard
+ticket          Ticket Number
+fare            Passenger Fare
+cabin           Cabin
+embarked        Port of Embarkation
+                (C = Cherbourg; Q = Queenstown; S = Southampton)
 
+SPECIAL NOTES:
+Pclass is a proxy for socio-economic status (SES)
+ 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower
+
+Age is in Years; Fractional if Age less than One (1)
+ If the Age is Estimated, it is in the form xx.5
+
+With respect to the family relation variables (i.e. sibsp and parch)
+some relations were ignored.  The following are the definitions used
+for sibsp and parch.
+
+Sibling:  Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic
+Spouse:   Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)
+Parent:   Mother or Father of Passenger Aboard Titanic
+Child:    Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
+
+Other family relatives excluded from this study include cousins,
+nephews/nieces, aunts/uncles, and in-laws.  Some children travelled
+only with a nanny, therefore parch=0 for them.  As well, some
+travelled with very close friends or neighbors in a village, however,
+the definitions do not support such relations.
 \subsection{Research question}
 Our primary question which we want answered was:\\
 \textit{"Which attributes contributes mostly to the survival rate of a passenger on the Titanic}\\
