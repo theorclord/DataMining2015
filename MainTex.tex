@@ -125,12 +125,15 @@ The secondary question arose when looking at clusters of the data.\\
 Looking at the data, we decide to try clustering to see if there was an emergent pattern. It would be interesting to see if the were a relation between wealth and number of children and the like. 
 \subsection{Tools for data mining}
 We choose to use the free tool called Orange\cite{orange}. This tool allowed to quickly manipulate the data, such that we could extract the interesting elements. 
-In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. We have included the map of the process used for our data set in the orange framework, see appendix \ref{appenOrange}, figure \ref{OrangeMap}. The figure presents a brief overview of the data mining process, a better image of the individual parts will be presented in their appropriate sections. 
+In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. All manipulations of our data is done in this tool, and the diagram we have drawn has 3 areas of focus. There is an area focussed on the preprocessing of the data, deleting and updating data as described later in section \ref{sec:preproc}. This area sends the processed data to a classification tree map and on to the K-means map. Each of these constitute the remaining areas. In each of the areas the data is processed using the appropriate algorithm, and visualized.
+
+We have included the map of the process used for our data set in the orange framework in appendix \ref{appenOrange}, figure \ref{OrangeMap}.
 
 \clearpage
 \section{Data mining}
 This section goes through the data mining process, detailing the methods used and analysing and explaining the output. 
 \subsection{Preprocessing}
+\label{sec:preproc}
 The data input we got from Kaggle\cite{kaggleData}, was quite neat and easy to work with. This lead to very little preprocessing and general expectation of functioning data. 
 However some of the data, even though extensive, had no sensible patterns from which information could be unlocked, and some data was discarded as they were not directly related to our research question.
 We choose to remove the Ticket Number and Cabin data from our data set, as there were no easily identifiable pattern and there were many missing values. 
