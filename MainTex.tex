@@ -45,6 +45,7 @@ Noor Shaker\\
 \tableofcontents
 \pagebreak
 \section{Introduction}
+
 \subsection{Data selection}
 We have worked on a data set regarding the passengers on the titanic. The data structure is presented in table \ref{titanData} with a short name and the value type associated with the variable.
 \begin{table}[h]
@@ -114,8 +115,7 @@ The secondary question arose when looking at clusters of the data.\\
 Looking at the data, we decide to try clustering to see if there was an emergent pattern. It would be interesting to see if the were a relation between wealth and number of children and the like. 
 \subsection{Tools for data mining}
 We choose to use the free tool called Orange\cite{orange}. This tool allowed to quickly manipulate the data, such that we could extract the interesting elements. 
-In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. Before explaining further, we have included the map of the process used for our data set in the orange framework, see figure \ref{OrangeMap}.
-
+In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. Before explaining further, we have included the map of the process used for our data set in the orange framework, see figure \ref{OrangeMap}. The figure presents a brief overview of the data mining process, a better image of the individual parts will be presented in their appropriate sections. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{orangeMap}
@@ -123,9 +123,28 @@ In the tool you manipulate the data by clicking and drawing connections between 
 	\label{OrangeMap}
 \end{figure}
 
-
+\clearpage
 \section{Data mining}
+This section goes through the data mining process, detailing the methods used and analysing and explaining the output. 
 \subsection{Preprocessing}
+The data input we got from Kaggle\cite{kaggleData}, was quite neat and easy to work with. This lead to very little preprocessing and general expectation of functioning data. 
+However some of the data, even though extensive, had no sensible patterns from which information could be unlocked, and some data were discarded as they were not directly related to our research question. 
+We choose to remove the Ticket Number from our data set, as there were no easily identifiable pattern and there were many missing values. The same arguments were used to remove the cabin data. 
+The Name of the passengers were discarded as well, as it was not interesting in the methods we choose to apply to the data. 
+
+The main reduction in entries in our data, rather than attributes, were to remove any entry with missing attributes. There was removed 182 entries, mainly due to lack of age, whilst a few, 2, were removed because of lacking Embarked. 
+A small reduction in data were made to remove outliers in respect to fare, simply because their presence simply deteriorate the remaining data. This can be supported by looking at the Fare distribution before any preprocessing has been done, see figure \ref{farepreprocess}.
+
+\begin{figure}[h]
+\begin{center}
+	\includegraphics[scale=0.6]{FarePreprocess}
+\end{center}
+\caption{Fare distribution on initial dataset. The black area between 300 and 400, indicates no persons.}
+\label{farepreprocess}
+\end{figure}
+
+From the figure it is clear that the outliers of the 3 people who paid more than 400. 
+
 \subsection{Classification tree}
 Decided to use classification tree to try to accurately predict the survival of passengers from common known values such as, sex, age, number of siblings/spouses on board, number of parents/children on board, how much they paid for their ticket and where they embarked from.
 \subsubsection{Cross Validation}
@@ -226,6 +245,11 @@ The classification tree could be used to predict the survival of people whose wh
   \emph{Orange Data Mining},
   http://orange.biolab.si/,
   13-05-15
+  
+\bibitem{kaggleData}
+	\emph{Kaggle Titanic data},
+	https://www.kaggle.com/c/titanic,
+	14-05-15
 \end{thebibliography}
 
 \end{document}
