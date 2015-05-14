@@ -124,6 +124,12 @@ Looking at the data, we decide to try clustering to see if there was an emergent
 \subsection{Tools for data mining}
 We choose to use the free tool called Orange\cite{orange}. This tool allowed to quickly manipulate the data, such that we could extract the interesting elements. 
 In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. Before explaining further, we have included the map of the process used for our data set in the orange framework, see figure \ref{OrangeMap}. The figure presents a brief overview of the data mining process, a better image of the individual parts will be presented in their appropriate sections. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{orangeMap}
+	\caption{The map of the methods and processes used on the data.}
+	\label{OrangeMap}
+\end{figure}
 
 \clearpage
 \section{Data mining}
@@ -159,19 +165,17 @@ The total process in the orange framework can be seen in figure \ref{preprocessM
 
 \subsection{Classification tree}
 The classification tree is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{ClassificationTreeOrange}
-\end{center}
-\caption{Orange map of the classification tree process.}
-\end{figure}
-
 \subsubsection{Implementation}
 With the classificat 
 \subsubsection{Cross Validation}
 10 fold Cross validation
 \subsection{K-means Clustering}
-K-Means clustering\cite{KMeans} works by first defining K number of clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
+<<<<<<< HEAD
+K-Means clustering works by first defining K number of clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
+=======
+
+K-Means clustering\cite{KMeans} works by first defining K number of  clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
+>>>>>>> 55a48da05e373abdd30af78a2a4643693eb24fb1
 \subsubsection{Implementation}
 We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
 
@@ -253,13 +257,6 @@ The classification tree could be used to predict the survival of people whose wh
 
 
 \appendix
-\section{Orange Process map}
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.35]{orangeMap}
-	\caption{The map of the methods and processes used on the data.}
-	\label{OrangeMap}
-\end{figure}
 \begin{thebibliography}{9}
 
 \bibitem{orange}
