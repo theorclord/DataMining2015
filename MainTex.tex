@@ -158,7 +158,8 @@ The total process in the orange framework can be seen in figure \ref{preprocessM
 \end{figure}
 
 \subsection{Classification tree}
-The classification tree is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
+The classification tree\cite{ClassificationTree} is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
+The tree is created upon the information gain, it will be built from top to bottom and the tree will keep being built until all the the samples of a given tree node belong to the same class, no remaining attributes to split upon or no samples are left.
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{ClassificationTreeOrange}
@@ -177,15 +178,6 @@ We decided to use K-Means Clustering in order to increase the accuracy of our Cl
 
 How ever after reclassifying with the clusters as an extra attribute we saw that it did not increase accuracy as expected. After looking into the clustered data we saw that the clustering and the classification focused on the same attributes so that did not help us in increasing accuracy.
 
-How ever while looking over the clusters we could see interesting facts about the clusters and were able to find connections regarding clusters.
-
-For example we saw that in cluster 1, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
-
-How ever if we look at Cluster 3, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
-
-What we can extract from this data is, that if you were upper class you would most likely be living in Cherbough.
-We can also see that people living in Cherbourg and Queenstown(Q) generally had more money than people living in Southampton. If we look at the fare graph difference between Cluster 1 and 3 we can see a big difference, people living in Southampton would generally pay less than 20 dollars for the ticket and almost no one paid more than that. How ever in Cluster 3 we can see that people still mostly paid under 20 dollars however we can also see that there are a lot more people willing to pay more than the 20 dollars.
-
 \begin{table}[h]
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -199,6 +191,8 @@ Male & C & 1.552 & 34.14 & 0 & 0 & 66.8577\\
 \caption{Cluster Centroids after clustering.}
 \label{clusterCentroids}
 \end{table}
+
+How ever while looking over the clusters we could see interesting facts about the clusters and were able to find connections regarding clusters.
 
 \begin{figure}[h]
 	\centering
@@ -216,19 +210,6 @@ Male & C & 1.552 & 34.14 & 0 & 0 & 66.8577\\
 \begin{figure}[h]
 	\centering
 	\begin{center}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Sex}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/PClass}\\
-		\vspace{1 mm}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Embarked}
-		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Fare}
-	\end{center}
-	\caption{Cluster 2}
-	\label{ClusterTwo}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\begin{center}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/Sex}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster3/PClass}\\
 		\vspace{1 mm}
@@ -238,6 +219,16 @@ Male & C & 1.552 & 34.14 & 0 & 0 & 66.8577\\
 	\caption{Cluster 3}
 	\label{ClusterThree}
 \end{figure}
+
+
+For example we saw that in cluster 1, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
+
+How ever if we look at Cluster 3, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
+
+What we can extract from this data is, that if you were upper class you would most likely be living in Cherbough.
+We can also see that people living in Cherbourg and Queenstown(Q) generally had more money than people living in Southampton. If we look at the fare graph difference between Cluster 1 and 3 we can see a big difference, people living in Southampton would generally pay less than 20 dollars for the ticket and almost no one paid more than that. How ever in Cluster 3 we can see that people still mostly paid under 20 dollars however we can also see that there are a lot more people willing to pay more than the 20 dollars.
+
+
 
 
 \subsubsection{Data validation}
@@ -260,6 +251,20 @@ The classification tree could be used to predict the survival of people whose wh
 	\caption{The map of the methods and processes used on the data.}
 	\label{OrangeMap}
 \end{figure}
+\section{K-Mean Clustering}
+\begin{figure}[h]
+	\centering
+	\begin{center}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Sex}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/PClass}\\
+		\vspace{1 mm}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Embarked}
+		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Fare}
+	\end{center}
+	\caption{Cluster 2}
+	\label{ClusterTwo}
+\end{figure}
+
 \begin{thebibliography}{9}
 
 \bibitem{orange}
@@ -272,10 +277,19 @@ The classification tree could be used to predict the survival of people whose wh
 	https://www.kaggle.com/c/titanic,
 	14-05-15
 	
+
+\bibitem{ClassificationTree}
+	\emph{Classification Tree},
+	http://en.wikipedia.org/wiki/Decision\_tree\_learning,
+	14-05-15
+	
 \bibitem{KMeans}
 	\emph{K-Means Clustering},
 	http://en.wikipedia.org/wiki/K-means\_clustering,
 	14-05-15
+
+	
+	
 \end{thebibliography}
 
 \end{document}
