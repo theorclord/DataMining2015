@@ -173,7 +173,7 @@ With the classificat
 \subsubsection{Cross Validation}
 10 fold Cross validation
 \subsection{K-means Clustering}
-K-Means clustering\cite{KMeans} works by first defining K number of clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
+K-Means clustering\cite[p.451]{DataMinBook} works by first defining K number of clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
 \subsubsection{Implementation}
 We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
 
@@ -222,9 +222,9 @@ How ever while looking over the clusters we could see interesting facts about th
 \end{figure}
 
 
-For example we saw that in cluster 1, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
+For example we saw that in cluster 1, see figure \ref{ClusterOne}, every person there was male, mostly lower class, most of them paid under 20 dollars for their Fare and almost all of them embarked from Southampton(S).
 
-How ever if we look at Cluster 3, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
+How ever if we look at Cluster 3, see figure \ref{ClusterThree}, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
 
 What we can extract from this data is, that if you were upper class you would most likely be living in Cherbough.
 We can also see that people living in Cherbourg and Queenstown(Q) generally had more money than people living in Southampton. If we look at the fare graph difference between Cluster 1 and 3 we can see a big difference, people living in Southampton would generally pay less than 20 dollars for the ticket and almost no one paid more than that. How ever in Cluster 3 we can see that people still mostly paid under 20 dollars however we can also see that there are a lot more people willing to pay more than the 20 dollars.
@@ -232,8 +232,10 @@ We can also see that people living in Cherbourg and Queenstown(Q) generally had 
 
 
 
-\subsubsection{Data validation}
-10 fold cross validation
+\subsection{Data validation}
+K-fold Cross validation \cite[p.370]{DataMinBook} works by randomly partitioning the data into K exclusive subsets. The subsets are then run K times, in each loop a different subset will be used as the test data while the other k-1 subsets will be used as a training set.
+\subsubsection{Results}
+We decided to use 10-fold cross validation to validate our classification from the classification tree. The results can be seen in figure and figure.
 \clearpage
 \section{Conclusion}
 \subsection{Societal impact}
@@ -293,11 +295,6 @@ The classification tree could be used to predict the survival of people whose wh
 	http://en.wikipedia.org/wiki/Decision\_tree\_learning,
 	14-05-15
 	
-\bibitem{KMeans}
-	\emph{K-Means Clustering},
-	http://en.wikipedia.org/wiki/K-means\_clustering,
-	14-05-15
-
 	
 	
 \end{thebibliography}
