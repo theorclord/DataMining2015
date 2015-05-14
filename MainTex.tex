@@ -46,8 +46,7 @@ Noor Shaker\\
 \pagebreak
 \section{Introduction}
 \subsection{Data selection}
-We have worked on a data set regarding the passengers on the titanic. The data structure is presented in table \ref{titanData} with a short name and the value type associated with the variable. 
-The type binary and binary string, means there is only two options, the first of the types is based on numeric binary data, whilst the second is based on string data. The value type attribute table covers three options. The 
+We have worked on a data set regarding the passengers on the titanic. The data structure is presented in table \ref{titanData} with a short name and the value type associated with the variable.
 \begin{table}[h]
 \begin{tabular}{|l|l|l|}
 \hline
@@ -70,43 +69,41 @@ embarked & Port of Embarkation & attribute table\\
 \label{titanData}
 \end{table}
 
-VARIABLE DESCRIPTIONS:
-survival        Survival
-                (0 = No; 1 = Yes)
-pclass          Passenger Class
-                (1 = 1st; 2 = 2nd; 3 = 3rd)
-name            Name
-sex             Sex
-age             Age
-sibsp           Number of Siblings/Spouses Aboard
-parch           Number of Parents/Children Aboard
-ticket          Ticket Number
-fare            Passenger Fare
-cabin           Cabin
-embarked        Port of Embarkation
-                (C = Cherbourg; Q = Queenstown; S = Southampton)
+The type binary and binary string, means there is only two options, the first of the types is based on numeric binary data, whilst the second is based on string data. The value type attribute table covers three options. The type designation in the table are based on how they are treated in the data mining code. This means that whilst some of the other variables might be a three option choice, it will not be treated as such. The reason for this division is mostly due to the nature of string variables and numeric variables.
 
-SPECIAL NOTES:
-Pclass is a proxy for socio-economic status (SES)
- 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower
+\subsubsection{Data description}
+The variables in the table are specified as follows. 
 
-Age is in Years; Fractional if Age less than One (1)
- If the Age is Estimated, it is in the form xx.5
+Survival is simply a 1 for survived and 0 for not. 
 
-With respect to the family relation variables (i.e. sibsp and parch)
-some relations were ignored.  The following are the definitions used
-for sibsp and parch.
+Passenger Class is a numeric value which can take on either 1, 2, or 3. The lower the value, the higher the class. The class is a proxy for the passengers socio-economic status.
 
-Sibling:  Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic
-Spouse:   Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)
-Parent:   Mother or Father of Passenger Aboard Titanic
-Child:    Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
+Name is simply the name of the passenger, starting with surname.
 
-Other family relatives excluded from this study include cousins,
-nephews/nieces, aunts/uncles, and in-laws.  Some children travelled
-only with a nanny, therefore parch=0 for them.  As well, some
-travelled with very close friends or neighbors in a village, however,
-the definitions do not support such relations.
+Sex is the sex of the passenger.
+
+Age is the age in years of the passenger. If the age is less than one it is fractional, and if it is estimated the age is in the form xx.5, meaning it has a decimal value as well.
+
+Number of Siblings/Spouses Aboard, is the number of relatives, yet some of the relations are ignored. The meaning of sibling and spouse is summarized below.
+
+Number of Parents/Children Aboard, is similar to the Number of Siblings/Spouses Aboard. The meaning is as well summarized below.
+\begin{itemize}
+	\item[\textbf{Sibling:}] Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic
+	\item[\textbf{Spouse:}] Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)
+\item[\textbf{Parent:}] Mother or Father of Passenger Aboard Titanic
+\item[\textbf{Child:}] Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
+\end{itemize}
+
+Other family relatives excluded from this study include cousins, nephews/nieces, aunts/uncles, and in-laws.  Some children travelled only with a nanny, therefore parch=0 for them.  As well, some travelled with very close friends or neighbours in a village, however, the definitions do not support such relations.
+
+Ticket Number is the number printed on the ticket. It is basically an identification string with characters and numbers. The tickets have no real pattern.
+
+Passenger Fare is how much the passenger paid for its ticket. The price probably is listed in dollars.
+
+Cabin is the cabin number. Again this is an identification of the rooms, yet there is not really any good patterns within the identification string.
+
+Port of Embarkation is the place of embarking for the passenger. The port is abbreviated as follows. C is for Cherbourg,	Q is for Queenstown, S is for Southampton.
+
 \subsection{Research question}
 Our primary question which we want answered was:\\
 \textit{"Which attributes contributes mostly to the survival rate of a passenger on the Titanic}\\
