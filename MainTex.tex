@@ -124,7 +124,7 @@ The secondary question arose when looking at clusters of the data.\\
 Looking at the data, we decide to try clustering to see if there was an emergent pattern. It would be interesting to see if the were a relation between wealth and number of children and the like. 
 \subsection{Tools for data mining}
 We choose to use the free tool called Orange\cite{orange}. This tool allowed to quickly manipulate the data, such that we could extract the interesting elements. 
-In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. Before explaining further, we have included the map of the process used for our data set in the orange framework, see figure \ref{OrangeMap}. The figure presents a brief overview of the data mining process, a better image of the individual parts will be presented in their appropriate sections. 
+In the tool you manipulate the data by clicking and drawing connections between data elements and processing methods. We have included the map of the process used for our data set in the orange framework, see appendix \ref{appenOrange}, figure \ref{OrangeMap}. The figure presents a brief overview of the data mining process, a better image of the individual parts will be presented in their appropriate sections. 
 
 \clearpage
 \section{Data mining}
@@ -160,14 +160,7 @@ The total process in the orange framework can be seen in figure \ref{preprocessM
 
 \subsection{Classification tree}
 The classification tree\cite{ClassificationTree} is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
-The tree is created upon the information gain, it will be built from top to bottom and the tree will keep being built until all the the samples of a given tree node belong to the same class, no remaining attributes to split upon or no samples are left. In figure \ref{classTreeMap}, we see the structure of the orange map where we create the classification tree. 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.5]{ClassificationTreeOrange}
-\end{center}
-\caption{Orange map of the classification tree process.}
-\label{classTreeMap}
-\end{figure}
+The tree is created upon the information gain, it will be built from top to bottom and the tree will keep being built until all the the samples of a given tree node belong to the same class, no remaining attributes to split upon or no samples are left. In appendix \ref{appenOrange}, figure \ref{classTreeMap}, we see the structure of the orange map where we create the classification tree. 
 
 \subsubsection{Implementation and analysis}
 Our classification tree is built using the standard gain value and splits in regard to whether a passenger survived. This means the information gain is based on whether we learn more about who died after the split. The resulting tree, taken to five nodes depth, is visible in figure \ref{classificationTree}.
@@ -192,7 +185,7 @@ K-Means clustering\cite[p.451]{DataMinBook} works by first defining K number of 
 \subsubsection{Implementation and analysis}
 We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
 
-How ever after reclassifying with the clusters as an extra attribute we saw that it did not increase accuracy as expected. After looking into the clustered data we saw that the clustering and the classification focused on the same attributes so that did not help us in increasing accuracy.
+However after reclassifying with the clusters as an extra attribute we saw that it did not increase accuracy as expected. After looking into the clustered data we saw that the clustering and the classification focused on the same attributes so that did not help us in increasing accuracy. The final centroids of our clusters are visible in Table \ref{clusterCentroids}.
 
 \begin{table}[h]
 \begin{tabular}{|l|l|l|l|l|l|l|}
@@ -208,7 +201,7 @@ Male & C & 1.552 & 34.14 & 0 & 0 & 66.8577\\
 \label{clusterCentroids}
 \end{table}
 
-How ever while looking over the clusters we could see interesting facts about the clusters and were able to find connections regarding clusters.
+However while looking over the clusters we could see interesting facts about the clusters and were able to find connections regarding clusters.
 
 \begin{figure}[h]
 	\centering
@@ -219,7 +212,7 @@ How ever while looking over the clusters we could see interesting facts about th
 		\includegraphics[scale=0.25]{ClusterDistribution/Cluster1/Embarked}
 		\includegraphics[scale=0.25]{ClusterDistribution/Cluster1/Fare}
 	\end{center}
-	\caption{Cluster 1}
+	\caption{Cluster 1 data. From top left to bottom right the distributions are as follows: Sex, Pclass, Embarked, Fare.}
 	\label{ClusterOne}
 \end{figure}
 
@@ -234,23 +227,22 @@ For example we saw that in cluster 1, see figure \ref{ClusterOne}, every person 
 		\includegraphics[scale=0.25]{ClusterDistribution/Cluster3/Embarked}
 		\includegraphics[scale=0.25]{ClusterDistribution/Cluster3/Fare}
 	\end{center}
-	\caption{Cluster 3}
+	\caption{Cluster 3 data. From top left to bottom right the distributions are as follows: Sex, Pclass, Embarked, Fare.}
 	\label{ClusterThree}
 \end{figure}
 
 
-How ever if we look at Cluster 3, see figure \ref{ClusterThree}, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
+However if we look at Cluster 3, see figure \ref{ClusterThree}, that cluster is mostly male, mostly upper class and most of them embarked from Cherbourg(C).
 
-What we can extract from this data is, that if you were upper class you would most likely be living in Cherbough.
+Cluster 2, see appendix \ref{appenCluster}, figure \ref{ClusterTwo}, is only females, but with no other interesting correlation.
+
+What we can extract from this data is, that if you were upper class you would most likely be living in Cherbourg.
 We can also see that people living in Cherbourg and Queenstown(Q) generally had more money than people living in Southampton. If we look at the fare graph difference between Cluster 1 and 3 we can see a big difference, people living in Southampton would generally pay less than 20 dollars for the ticket and almost no one paid more than that. How ever in Cluster 3 we can see that people still mostly paid under 20 dollars however we can also see that there are a lot more people willing to pay more than the 20 dollars.
-
-
-
 
 \subsection{Data validation}
 K-fold Cross validation \cite[p.370]{DataMinBook} works by randomly partitioning the data into K exclusive subsets. The subsets are then run K times, in each loop a different subset will be used as the test data while the other k-1 subsets will be used as a training set.
 \subsubsection{Results}
-We decided to use 10-fold cross validation to validate our classification from the classification tree. The results can be seen in figure and figure.
+We decided to use 10-fold cross validation to validate our classification from the classification tree.
 
 \begin{table}[h]
 \begin{center}
@@ -281,6 +273,9 @@ By looking at Table \ref{confusionMatrix}, we can see that the clustering did no
 
 \clearpage
 \section{Conclusion}
+After looking at and analysing the Titanic data, we have gotten the following results. 
+
+In order to survive on the Titanic, you best chance is being a 
 \subsection{Societal impact}
 Time travellers could use this information to go on the titanic to have the adventure of a lifetime trying to use statistics to survive.
 
@@ -289,14 +284,27 @@ The classification tree could be used to predict the survival of people whose wh
 \clearpage
 \appendix
 \section{Orange Process map}
+\label{appenOrange}
+In this appendix are the maps of the processes being used on the data.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{orangeMap}
-	\caption{The map of the methods and processes used on the data.}
+	\caption{The main map of the methods and processes used on the data.}
 	\label{OrangeMap}
 \end{figure}
 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{ClassificationTreeOrange}
+\end{center}
+\caption{Orange map of the classification tree process.}
+\label{classTreeMap}
+\end{figure}
+
 \section{K-Mean Clustering}
+\label{appenCluster}
+The distributions from the clustered data.
 \begin{figure}[h]
 	\centering
 	\begin{center}
@@ -306,7 +314,7 @@ The classification tree could be used to predict the survival of people whose wh
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Embarked}
 		\includegraphics[scale=0.30]{ClusterDistribution/Cluster2/Fare}
 	\end{center}
-	\caption{Cluster 2}
+	\caption{Cluster 2 data. From top left to bottom right the distributions are as follows: Sex, Pclass, Embarked, Fare.}
 	\label{ClusterTwo}
 \end{figure}
 
