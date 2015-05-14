@@ -1,6 +1,7 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage[table]{xcolor}
 \usepackage[english]{babel}
 \usepackage[vmargin=3.5cm, top=2cm]{geometry}
 \usepackage[linktocpage=true]{hyperref}
@@ -236,6 +237,34 @@ We can also see that people living in Cherbourg and Queenstown(Q) generally had 
 K-fold Cross validation \cite[p.370]{DataMinBook} works by randomly partitioning the data into K exclusive subsets. The subsets are then run K times, in each loop a different subset will be used as the test data while the other k-1 subsets will be used as a training set.
 \subsubsection{Results}
 We decided to use 10-fold cross validation to validate our classification from the classification tree. The results can be seen in figure and figure.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+& No & Yes &\\
+\hline
+No & 367 & \cellcolor{gray!30}57 & \textbf{424}\\
+Yes &  \cellcolor{gray!30}75 & 210 & \textbf{285}\\
+& \textbf{442} & \textbf{267} & \textbf{709}\\
+\hline
+\end{tabular}
+\begin{tabular}{|l|l|l|l|}
+\hline
+& No & Yes &\\
+\hline
+No & 369 & \cellcolor{gray!30}55 & \textbf{424}\\
+Yes &  \cellcolor{gray!30} 81 & 204 & \textbf{285}\\
+& \textbf{450} & \textbf{259} & \textbf{709}\\
+\hline
+\end{tabular}
+\caption{Left: Non clustered Confusion Matrix. Right: Clustered Confusion Matrix. Grey colored cells are misclassified}
+\label{confusionMatrix}
+\end{center}
+\end{table}
+
+By looking at Table \ref{confusionMatrix}, we can see that the clustering did not increase the accuracy of the classification. But the accuracy is pretty good none the less, we managed to get around 80\% accuracy when predicting if people from test data survived or not.
+
 \clearpage
 \section{Conclusion}
 \subsection{Societal impact}
