@@ -159,12 +159,13 @@ The total process in the orange framework can be seen in figure \ref{preprocessM
 
 \subsection{Classification tree}
 The classification tree\cite{ClassificationTree} is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
-The tree is created upon the information gain, it will be built from top to bottom and the tree will keep being built until all the the samples of a given tree node belong to the same class, no remaining attributes to split upon or no samples are left.
+The tree is created upon the information gain, it will be built from top to bottom and the tree will keep being built until all the the samples of a given tree node belong to the same class, no remaining attributes to split upon or no samples are left. In figure \ref{classTreeMap}, we see the structure of the orange map where we create the classification tree. 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{ClassificationTreeOrange}
 \end{center}
 \caption{Orange map of the classification tree process.}
+\label{classTreeMap}
 \end{figure}
 
 \subsubsection{Implementation}
@@ -240,9 +241,7 @@ Time travellers could use this information to go on the titanic to have the adve
 
 The classification tree could be used to predict the survival of people whose whereabouts were unknown.
 
-
-
-
+\clearpage
 \appendix
 \section{Orange Process map}
 \begin{figure}[h]
@@ -251,6 +250,7 @@ The classification tree could be used to predict the survival of people whose wh
 	\caption{The map of the methods and processes used on the data.}
 	\label{OrangeMap}
 \end{figure}
+
 \section{K-Mean Clustering}
 \begin{figure}[h]
 	\centering
@@ -266,6 +266,16 @@ The classification tree could be used to predict the survival of people whose wh
 \end{figure}
 
 \begin{thebibliography}{9}
+
+\bibitem{DataMinBook}
+	Jiawei Han, 
+	Micheline Kamber, 
+	Jian Pei,
+	\emph{Data Mining: Concepts and Techniques},
+	Morgan Kaufmann, USA	
+	Third edition,
+	2012.
+	
 
 \bibitem{orange}
   \emph{Orange Data Mining},
