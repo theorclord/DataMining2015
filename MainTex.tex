@@ -56,7 +56,7 @@ Noor Shaker\\
 %Finally we will conclude upon the project and see if there is any societal impact from our data analysis.
 %\clearpage
 \section{Data selection}
-We have worked on a data set regarding the passengers on the titanic. The data structure is presented in table \ref{titanData} with a short name and the value type associated with the variable.
+We worked on a data set regarding the passengers on the titanic. The data structure is presented in Table \ref{titanData} with a short name and the value type associated with the variable.
 \begin{table}[h]
 \begin{tabular}{|l|l|l|}
 \hline
@@ -79,7 +79,7 @@ embarked & Port of Embarkation & attribute table\\
 \label{titanData}
 \end{table}
 
-The type binary and binary string, means there is only two options, the first of the types is based on numeric binary data, whilst the second is based on string data. The value type attribute table covers three options. The type designation in the table are based on how they are treated in the data mining code. This means that whilst some of the other variables might be a three option choice, it will not be treated as such. The reason for this division is mostly due to the nature of string variables and numeric variables.
+The type binary and binary string, means there are only two options, the first of the types is based on numeric binary data, whilst the second is based on string data. The value type attribute table covers three options. The type designation in the table are based on how they are treated in the data mining code. This means that whilst some of the other variables might be a three option choice, it will not be treated as such. The reason for this division is mostly due to the nature of string variables and numeric variables.
 
 \subsection{Data description}
 The variables in the table are specified as follows. 
@@ -90,7 +90,7 @@ Passenger Class is a numeric value which can take on either 1, 2, or 3. The lowe
 
 Name is simply the name of the passenger, starting with surname.
 
-Sex is the sex of the passenger.
+Sex is the gender of the passenger.
 
 Age is the age in years of the passenger. If the age is less than one it is fractional, and if it is estimated the age is in the form xx.5, meaning it has a decimal value as well.
 
@@ -131,12 +131,12 @@ In the tool you manipulate the data by clicking and drawing connections between 
 This section goes through the data mining process, detailing the methods used and analysing and explaining the output. 
 \subsection{Preprocessing}
 The data input we got from Kaggle\cite{kaggleData}, was quite neat and easy to work with. This lead to very little preprocessing and general expectation of functioning data. 
-However some of the data, even though extensive, had no sensible patterns from which information could be unlocked, and some data were discarded as they were not directly related to our research question. 
-We choose to remove the Ticket Number from our data set, as there were no easily identifiable pattern and there were many missing values. The same arguments were used to remove the cabin data. 
-The Name of the passengers were discarded as well, as it was not interesting in the methods we choose to apply to the data. 
+However some of the data, even though extensive, had no sensible patterns from which information could be unlocked, and some data was discarded as they were not directly related to our research question.
+We choose to remove the Ticket Number and Cabin data from our data set, as there were no easily identifiable pattern and there were many missing values. 
+The Name of the passengers were discarded as well, as it was not of any use in the methods we chose to apply to the data. 
 
-The main reduction in entries in our data, rather than attributes, were to remove any entry with missing attributes. There was removed 182 entries, mainly due to lack of age, whilst a few, 2, were removed because of lacking Embarked. 
-A small reduction in data were made to remove outliers in respect to fare, simply because their presence simply deteriorate the remaining data. This can be supported by looking at the Fare distribution before any preprocessing has been done, see figure \ref{farepreprocess}.
+The main reduction in entries in our data, rather than attributes, were to remove any entry with missing attributes. 182 entries were removed in total, mainly due to lack of age, whilst a few, 2, were removed because of lacking Embarked. 
+A small reduction in data was made to remove outliers in respect to fare, simply because their presence simply deteriorate the remaining data. This can be supported by looking at the Fare distribution before any preprocessing had been done, see figure \ref{farepreprocess}.
 
 \begin{figure}[h]
 \begin{center}
@@ -173,7 +173,7 @@ Our classification tree is built using the standard gain value and splits in reg
 \label{classificationTree}
 \end{figure}
 
-From the figure there quickly arise an interesting distinction, namely that the females have a much greater chance of survival, compared to the males. Even at the first split into genders, the females have an astonishing survival rate of 75.2 percent. From there after a simple split in class, you see the females who are both middle or upper class, have a 94.2 percent chance of survival. From there it splits on the fare they paid, where the ones who paid the most dies the most. This can be explained in the fact that many of the upper class high paying females already have been sorted out. With this in mind, the fact that there is a difference i payment, though signification in survival rate, tells us little about why it is important. Next split is, for both sub-splits, where the younger age prevails in both cases. From there the splits yield very little information and have been excluded from this report.
+From the figure there quickly arises an interesting distinction, namely that the females have a much greater chance of survival, compared to the males. Even at the first split into genders, the females have an astonishing survival rate of 75.2 percent. From there after a simple split in class, you see the females who are both middle or upper class, have a 94.2 percent chance of survival. From there it splits on the fare they paid, where the ones who paid the most are more likely to not survive. This can be explained in the fact that many of the upper class high paying females already have been sorted out. With this in mind, the fact that there is a difference in fare, though signification in survival rate, tells us little about why it is important. Next split is, for both sub-splits, where the younger age prevails in both cases. From there the splits yield very little information and have been excluded from this report.
 
 Looking at the male side of the tree, just by being male, you have 79.8 percent risk of dying. The first split in city of embarkation, if you were one of the 16 people from Queenstown, your chances of survival is only 6.2 percent. The passengers from the other cities fare a little better, but in order to have a decent chance of survival, you will need to be of age less than or equal to 13, and have less than 2.5 siblings or spouses.
 
