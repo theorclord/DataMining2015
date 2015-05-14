@@ -164,12 +164,14 @@ The total process in the orange framework can be seen in figure \ref{preprocessM
 \end{figure}
 
 \subsection{Classification tree}
-Decided to use classification tree to try to accurately predict the survival of passengers from common known values such as, sex, age, number of siblings/spouses on board, number of parents/children on board, how much they paid for their ticket and where they embarked from.
+The classification tree is built upon the information gain of the attributes give to it. The information gain lets us known on which attribute the tree should split upon.
+\subsubsection{Implementation}
+With the classificat 
 \subsubsection{Cross Validation}
 10 fold Cross validation
 \subsection{K-means Clustering}
 
-K-Means clustering works by first defining K number of  clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
+K-Means clustering\cite{KMeans} works by first defining K number of  clusters, then you feed normalized data to the clustering algorithm, the algorithm chooses K-initial centroids and starts calculating the distance to each data point and then clusters the data around those centroids. After each loop the centroid is recalculated in accordance to all data points in cluster and then the algorithm recalculated the distance to every point. This loop continues until the algorithm runs its loop once without changing anything or is within the minimal change value.
 \subsubsection{Implementation}
 We decided to use K-Means Clustering in order to increase the accuracy of our Classification Tree by adding the clusters to the attribute of the original data.
 
@@ -261,6 +263,11 @@ The classification tree could be used to predict the survival of people whose wh
 \bibitem{kaggleData}
 	\emph{Kaggle Titanic data},
 	https://www.kaggle.com/c/titanic,
+	14-05-15
+	
+\bibitem{KMeans}
+	\emph{K-Means Clustering},
+	http://en.wikipedia.org/wiki/K-means\_clustering,
 	14-05-15
 \end{thebibliography}
 
